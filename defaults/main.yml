@@ -1,0 +1,4 @@
+---
+
+# default user to apply the key to
+user: '{{ ansible_user_id }}'
