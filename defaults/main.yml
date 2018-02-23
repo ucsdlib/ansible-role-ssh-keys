@@ -1,4 +1,6 @@
 ---
-
 # default user to apply the key to
-user: '{{ ansible_user_id }}'
+ssh_keys_ad_account: '{{ ansible_user_id }}'
+ssh_keys_github_accounts:
+  - '{{ ssh_keys_ad_account }}'
+

@@ -1,0 +1,11 @@
+# ansible/vagrant stuff
+roles/*
+.ssh-config
+.vagrant
+ansible.cfg
+hosts
+*.retry
+*.log
+Vagrantfile*
+Makefile
+local_test.yml
