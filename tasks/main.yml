@@ -1,35 +1,8 @@
 ---
-
-# Copy ssh keys to root
-
-- name: Get {{ user }}'s passwd entry
-  getent:
-    database: passwd
-    key: '{{ user }}'
-
-- name: Save {{ user }}'s passwd fields
-  set_fact:
-    uid:  '{{ getent_passwd[user][1] }}'
-    gid:  '{{ getent_passwd[user][2] }}'
-    home: '{{ getent_passwd[user][4] }}'
-
-- name: Ensure {{ user }}'s ssh directory exists
-  file:
-    path: '{{ home }}/.ssh'
-    state: directory
-    owner: '{{ uid }}'
-    group: '{{ gid }}'
-    mode: 0700
-
-- name: 'Apply ssh keys to {{ user }}'
-  copy:
-    dest: '{{ home }}/.ssh/authorized_keys'
-    src: '{{ item }}'
-    owner: '{{ uid }}'
-    group: '{{ gid }}'
-    mode: 0644
-  with_first_found:
-    - 'authorized_keys-{{ user }}-{{ ansible_hostname }}'
-    - 'authorized_keys-{{ user }}'
-    - 'authorized_keys-{{ ansible_hostname }}'
-    - 'authorized_keys'
+- name: Download ssh keys for library staff
+  authorized_key:
+    user: '{{ ssh_keys_ad_account }}'
+    state: present
+    key: https://github.com/{{ item }}.keys
+  with_items: '{{ ssh_keys_github_accounts }}'
+  tags: ssh-keys

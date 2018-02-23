@@ -1,0 +1,18 @@
+galaxy_info:
+  author: Matt Critchlow
+  description: Install public SSH keys for a given user/role account
+  company: UC San Diego Library
+
+  license: BSD
+
+  min_ansible_version: 2.4
+
+  platforms:
+  - name: EL
+    versions:
+      - 7
+  - name: Ubuntu
+    versions:
+      - 16.04
+
+  galaxy_tags: []
