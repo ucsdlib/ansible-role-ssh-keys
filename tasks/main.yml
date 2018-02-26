@@ -1,9 +1,9 @@
 ---
 - name: Download ssh keys for library staff
   authorized_key:
-    user: '{{ ssh_keys_ad_account }}'
+    user: '{{ ssh_keys_user }}'
     state: present
-    key: https://github.com/{{ item }}.keys
-    comment: "{{ item }} - GitHub"
-  with_items: '{{ ssh_keys_github_accounts }}'
+    key: https://github.com/{{ ssh_keys_map[item].github }}.keys
+    comment: "{{ ssh_keys_map[item].name }}({{ ssh_keys_map[item].github }}) - GitHub"
+  with_items: "{{ ssh_keys_ad_usernames | default (ssh_keys_map[ssh_keys_user]) }}"
   tags: ssh-keys
