@@ -44,7 +44,7 @@ Role account setup for a host:
     - hosts: servers
       roles:
          - { role: ucsdlib.ansible-role-ssh-keys,
-             tags: ssh,
+             tags: ssh-keys,
              ssh_keys_ad_account: 'conan',
              ssh_keys_github_accounts: ['mcritchlow','jhriv','VivianChu']
            }
