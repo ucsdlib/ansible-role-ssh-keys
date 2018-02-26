@@ -35,7 +35,7 @@ Simple example of a single user setup for a host:
     - hosts: servers
       roles:
          - { role: ucsdlib.ansible-role-ssh-keys,
-             ssh_keys_ad_account: 'mcritchlow'
+             ssh_keys_user: 'mcritchlow'
            }
 ```
 
@@ -45,15 +45,16 @@ Role account setup for a host:
       roles:
          - { role: ucsdlib.ansible-role-ssh-keys,
              tags: ssh-keys,
-             ssh_keys_ad_account: 'conan',
-             ssh_keys_github_accounts: ['mcritchlow','jhriv','VivianChu']
+             ssh_keys_user: 'conan',
+             ssh_keys_ad_usernames: ['mcritchlow','jhriv','tchu']
            }
 ```
 
 Library Staff Map
 ----------------
 Since AD usernames do not map 1:1 with GitHub usernames, here is a mapping to
-use when setting up SSH keys for a given role/account.
+use when setting up SSH keys for a given role/account. Note this is also stored
+as a map in `defaults/main.yml` as `ssh_keys_map`
 
 ```
 - { ad_username: "tchu", github_username: "VivianChu" }

@@ -1,14 +1,14 @@
 ---
 - hosts: all
   vars:
-    ssh_keys_ad_account: 'conan'
-    ssh_keys_github_accounts: ['mcritchlow','jhriv']
+    ssh_keys_user: 'conan'
+    ssh_keys_ad_usernames: ['mcritchlow','jhriv']
 
   # create the user to populate SSH keys for
   pre_tasks:
     - name: Create user account for testing
       user:
-        name: '{{ ssh_keys_ad_account }}'
+        name: '{{ ssh_keys_user }}'
       become: yes
 
   roles:

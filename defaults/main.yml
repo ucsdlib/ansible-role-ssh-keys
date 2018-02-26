@@ -1,6 +1,35 @@
 ---
 # default user to apply the key to
-ssh_keys_ad_account: '{{ ansible_user_id }}'
-ssh_keys_github_accounts:
-  - '{{ ssh_keys_ad_account }}'
-
+ssh_keys_user: '{{ ansible_user_id }}'
+# ssh_keys_ad_usernames: ['{{ ansible_user_id }}']
+ssh_keys_map:
+  tchu:
+    github: VivianChu
+    name: Vivian Chu
+  lsitu:
+    github: lsitu
+    name: Longshou Situ
+  hweng:
+    github: hweng
+    name: Huawei Weng
+  drtrujillo:
+    github: dt-ucsd
+    name: David Trujillo
+  mcritchlow:
+    github: mcritchlow
+    name: Matt Critchlow
+  jhriv:
+    github: jhriv
+    name: John H. Robinson, IV
+  aflick:
+    github: allisonflick
+    name: Allisan Flick
+  tmarconi:
+    github: tmarconi
+    name: Tim Marconi
+  rstanonik:
+    github: rstanonik
+    name: Ron Stanonik
+  jgorney:
+    github: jgorney
+    name: Juliana Gorney
