@@ -19,4 +19,4 @@ Changes proposed in this pull request:
 * 
 * 
 
-@ucsdlib/developers @ucsdlib/operations - please review
+@ucsdlib/operations - please review
