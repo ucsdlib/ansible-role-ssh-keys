@@ -4,5 +4,6 @@
     user: '{{ ssh_keys_ad_account }}'
     state: present
     key: https://github.com/{{ item }}.keys
+    comment: "{{ item }} - GitHub"
   with_items: '{{ ssh_keys_github_accounts }}'
   tags: ssh-keys
