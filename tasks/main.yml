@@ -5,5 +5,5 @@
     state: present
     key: https://github.com/{{ ssh_keys_map[item].github }}.keys
     comment: "{{ ssh_keys_map[item].name }}({{ ssh_keys_map[item].github }}) - GitHub"
-  with_items: "{{ ssh_keys_ad_usernames | default (ssh_keys_map[ssh_keys_user]) }}"
+  with_items: "{{ ssh_keys_ad_usernames | default (ssh_keys_user) }}"
   tags: ssh-keys
