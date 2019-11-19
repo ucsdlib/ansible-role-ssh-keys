@@ -27,6 +27,16 @@ Role Variables
   (`ansible_user_id`)
 * `ssh_keys_github_accounts`: GitHub account(s) to add to `authorized_keys`
 
+Example CLI Usage
+-----------------
+
+In the example below, we are adding the ssh key(s) for `rstanonik` to the
+`starlight` user's authorized_keys file
+
+```
+ansible-playbook -D -i environments/staging/ -l exhibits-staging ssh-key.yml -e 'ssh_keys_ad_usernames=["rstanonik"]' -e ssh_keys_user=starlight -u ansible -b
+```
+
 Example Playbooks
 ----------------
 
