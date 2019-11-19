@@ -2,7 +2,7 @@
 - hosts: all
   vars:
     ssh_keys_user: 'conan'
-    ssh_keys_ad_usernames: ['mcritchlow','jhriv']
+    ssh_keys_ad_usernames: ['mcritchlow','rstanonik']
 
   # create the user to populate SSH keys for
   pre_tasks:
