@@ -18,9 +18,6 @@ ssh_keys_map:
   mcritchlow:
     github: mcritchlow
     name: Matt Critchlow
-  jhriv:
-    github: jhriv
-    name: John H. Robinson, IV
   aflick:
     github: allisonflick
     name: Allisan Flick
